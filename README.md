@@ -2,7 +2,13 @@
 
 Welcome to Bolt, Thunderbird's new design system. Bolt is here to ensure design consistency across desktop, mobile and web, while making it easy to onboard for contributors both internal and external.
 
-This repository will soon contain [design tokens](https://www.w3.org/community/design-tokens/) that are to be consumed by another application. These applications can be used to convert design tokens to css, or import various tokens into design tools. 
+## Packages
+
+This repository is split up into pnpm packages to keep things tidy. Due to this repository only containing a single package there's no pnpm workspaces setup yet.
+
+### Bolt Design Tokens
+
+A work-in-progress example of transforming [design tokens](https://www.w3.org/community/design-tokens/) into usable css via [terrazzo](https://github.com/terrazzoapp/terrazzo).
 
 ## Releases
 

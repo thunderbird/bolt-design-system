@@ -1,0 +1,82 @@
+{
+  "info": {
+    "$description": "Buttons, chips, icons",
+    "$type": "color",
+    "$value": "#004F9B"
+  },
+  "infoContainer": {
+    "$description": "Banners, cards, backgrounds",
+    "$type": "color",
+    "$value": "#F0F8FF"
+  },
+  "onInfo": {
+    "$description": "Text/icon in filled components",
+    "$type": "color",
+    "$value": "#FFFFFF"
+  },
+  "onInfoContainer": {
+    "$description": "Text/icons inside containers",
+    "$type": "color",
+    "$value": "#004F9B"
+  },
+  "success": {
+    "$description": "Icons, highlights, action emphasis",
+    "$type": "color",
+    "$value": "#194E2C"
+  },
+  "onSuccess": {
+    "$description": "Text/icon in filled components",
+    "$type": "color",
+    "$value": "#FFFFFF"
+  },
+  "successContainer": {
+    "$description": "Background of banners, badges, cards",
+    "$type": "color",
+    "$value": "#F4F9F4"
+  },
+  "onSuccessContainer": {
+    "$description": "Text/icons inside containers",
+    "$type": "color",
+    "$value": "#194E2C"
+  },
+  "warning": {
+    "$description": "Icons, highlights, action emphasis",
+    "$type": "color",
+    "$value": "#713F12"
+  },
+  "onWarning": {
+    "$description": "Text/icon in filled components",
+    "$type": "color",
+    "$value": "#FFFFFF"
+  },
+  "warningContainer": {
+    "$description": "Background of banners, badges, cards",
+    "$type": "color",
+    "$value": "#FEFAE8"
+  },
+  "onWarningContainer": {
+    "$description": "Text/icons inside containers",
+    "$type": "color",
+    "$value": "#713F12"
+  },
+  "error": {
+    "$description": "Icons, highlights, action emphasis",
+    "$type": "color",
+    "$value": "#7F1D1D"
+  },
+  "onError": {
+    "$description": "Text/icon in filled components",
+    "$type": "color",
+    "$value": "#FFFFFF"
+  },
+  "errorContainer": {
+    "$description": "Background of banners, badges, cards",
+    "$type": "color",
+    "$value": "#FEF2F2"
+  },
+  "onErrorContainer": {
+    "$description": "Text/icons inside containers",
+    "$type": "color",
+    "$value": "#7F1D1D"
+  }
+}

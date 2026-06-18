@@ -1,0 +1,49 @@
+# Simple workflow for exporting storybook artifact
+name: Export Design Tokens
+
+on:
+  # Runs on all branches except main
+  push:
+    branches:
+      - '**'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+env:
+    WORKING_DIR: ./packages/bolt-design-tokens
+
+jobs:
+  # Single deploy job since we're just creating and uploading the artifact
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - uses: pnpm/action-setup@v6
+        name: Setup pnpm
+        with:
+          version: 10
+          cache: true
+          cache_dependency_path: ${{ env.WORKING_DIR }}/pnpm-lock.yaml
+          run_install: |
+            - cwd: ${{ env.WORKING_DIR }}
+
+      - name: Build design tokens
+        run: pnpm tz build
+        working-directory: ${{ env.WORKING_DIR }}
+
+      - name: Set short commit SHA
+        run: echo "SHORT_COMMIT_SHA=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: design-tokens-${{ env.SHORT_COMMIT_SHA }}
+          path: ${{ env.WORKING_DIR }}/dist/
+          retention-days: 7
