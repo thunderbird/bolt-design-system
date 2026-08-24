@@ -45,5 +45,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: design-tokens-${{ env.SHORT_COMMIT_SHA }}
-          path: ${{ env.WORKING_DIR }}/dist/
+          path: ${{ env.WORKING_DIR }}/generated/
           retention-days: 7

@@ -1,14 +1,20 @@
 import { defineConfig } from '@terrazzo/cli';
 import css from "@terrazzo/plugin-css";
+import swift from "@terrazzo/plugin-swift";
 
 export default defineConfig({
-  tokens: ['tokens/bolt-example.json'],
+  tokens: ['tokens/tokens.json'],
   plugins: [
     css({
-      filename: "tokens.css",
+      filename: "bolt-design.css",
     }),
+    /* Outputs: `✗  No color space found with id = "srgb"`
+    swift({
+      catalogName: "BoldDesign",
+    }),
+    */
   ],
-  outDir: './dist/',
+  outDir: './generated/',
   lint: {
     /** @see https://terrazzo.app/docs/linting */
     build: {
