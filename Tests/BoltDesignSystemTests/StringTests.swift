@@ -20,4 +20,3 @@ struct StringTests {
         #expect(String(hex: 0x0) == "#000000")
     }
 }
-

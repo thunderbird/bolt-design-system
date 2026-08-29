@@ -31,10 +31,10 @@ struct TokenTests {
         #expect(try Token(description: " orange").components == ["orange"])
         #expect(try Token(description: "foundation.red").description == "foundation.red")
         #expect(try Token(description: "foundation.red").components == ["foundation", "red"])
-        #expect(throws: TokenError.empty) {
+        #expect(throws: TokenError.emptyTokenString) {
             try Token(description: "    ")
         }
-        #expect(throws: TokenError.empty) {
+        #expect(throws: TokenError.emptyTokenString) {
             try Token(description: "")
         }
     }

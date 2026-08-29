@@ -10,17 +10,23 @@ let package: Package = Package(
         .macOS(.v15)
     ],
     products: [
-        .library(name: "BoltDesignSystem", targets: [
-            "BoltDesignSystem"
-        ])
+        .library(
+            name: "BoltDesignSystem",
+            targets: [
+                "BoltDesignSystem"
+            ])
     ],
     targets: [
-        .target(name: "BoltDesignSystem", resources: [
-            .process("../../packages/bolt-design-tokens/tokens/tokens.json")
-        ]),
-        .testTarget(name: "BoltDesignSystemTests", dependencies: [
-            "BoltDesignSystem"
-        ])
+        .target(
+            name: "BoltDesignSystem",
+            resources: [
+                .process("../../packages/bolt-design-tokens/tokens/tokens.json")
+            ]),
+        .testTarget(
+            name: "BoltDesignSystemTests",
+            dependencies: [
+                "BoltDesignSystem"
+            ])
     ],
     swiftLanguageModes: [.v6]
 )

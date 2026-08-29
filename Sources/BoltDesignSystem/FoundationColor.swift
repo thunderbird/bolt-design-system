@@ -2,29 +2,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
-import SwiftUI
-
-extension Color {
-    public init(_ foundationColor: FoundationColor) {
-        self.init(hex: foundationColor.hex)
-    }
-
-    init(hex: Int) {
-        self.init(red: hex.red, green: hex.green, blue: hex.blue)
-    }
-}
-
-#Preview(" Foundation Color") {
-    ScrollView {
-        VStack {
-            ForEach(FoundationColor.allCases) {
-                Color($0)
-                    .frame(height: 44.0)
-            }
-        }
-        .padding()
-    }
-}
+import Foundation
 
 public struct FoundationColor: CustomStringConvertible, Identifiable {
     public let token: Token
@@ -51,7 +29,7 @@ extension FoundationColor: CaseIterable {
     static func allCases(name: String?, level: String? = nil) throws -> [Self] {
         let tokens: [String: Any] = try Bundle.module.tokens
         guard let tokens: [String: [String: [String: String]]] = tokens[.foundation] as? [String: [String: [String: String]]] else {
-            throw DecodingError.typeMismatchJSONDictionary
+            throw TokenError.jsonObjectWrongType
         }
         var colors: [Self] = []
         for name in tokens.keys {
@@ -63,7 +41,7 @@ extension FoundationColor: CaseIterable {
                 colors.append(Self(hex: hex, token: token, description: description))
             }
         }
-        colors = colors.sorted { $0.token.description < $1.token.description }
+        colors = colors.sorted { $0.id < $1.id }
         guard let name, !name.isEmpty else {
             return colors
         }

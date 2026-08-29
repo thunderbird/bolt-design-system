@@ -5,12 +5,14 @@
 import Foundation
 
 public enum TokenError: Error, CustomStringConvertible {
-    case empty
+    case jsonObjectWrongType
+    case emptyTokenString
 
     // MARK: CustomStringConvertible
     public var description: String {
         switch self {
-        case .empty: "Empty token string"
+        case .jsonObjectWrongType: "JSON object wrong type"
+        case .emptyTokenString: "Empty token string"
         }
     }
 }
@@ -25,7 +27,7 @@ public struct Token: CustomStringConvertible, ExpressibleByStringLiteral {
     public init(description: String) throws {
         let description: String = description.normalizedTokenString
         guard !description.isEmpty else {
-            throw TokenError.empty
+            throw TokenError.emptyTokenString
         }
         components = description.components(separatedBy: Self.separator)
         self.description = description

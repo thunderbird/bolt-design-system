@@ -11,9 +11,9 @@ extension Int {
 
     init(_ components: [Double]? = nil) {
         switch (components ?? []).count {
-        case 4: // RGB
+        case 4:  // RGB
             self = (Int(components![0] * 255.0) << 16) + (Int(components![1] * 255.0) << 8) + (Int(components![2] * 255.0) << 0)
-        case 2: // Grayscale
+        case 2:  // Grayscale
             self = (Int(components![0] * 255.0) << 16) + (Int(components![0] * 255.0) << 8) + (Int(components![0] * 255.0) << 0)
         default:
             self = 0

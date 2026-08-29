@@ -2,58 +2,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
-import SwiftUI
-
-extension Color {
-    public init(_ semanticColor: SemanticColor) {
-        let dark: Self? = semanticColor.color.dark != nil ? Self(semanticColor.color.dark!) : nil
-        self.init(Self(semanticColor.color.any), dark)
-    }
-
-    init(_ any: Self, _ dark: Self? = nil) {
-        #if os(watchOS)
-        self = dark ?? any  // Apple Watch uses dark color, if available
-        #else
-        if let dark, dark != any {
-            #if canImport(AppKit)
-            self.init(
-                nsColor: NSColor(name: nil) { appearance in
-                    switch appearance.name {
-                    case .darkAqua:
-                        return NSColor(dark)
-                    default:
-                        return NSColor(any)
-                    }
-                })
-            #elseif canImport(UIKit)
-            self.init(
-                uiColor: UIColor { traits in
-                    switch traits.userInterfaceStyle {
-                    case .dark:
-                        return UIColor(dark)
-                    default:
-                        return UIColor(any)
-                    }
-                })
-            #endif
-        } else {
-            self = any
-        }
-        #endif
-    }
-}
-
-#Preview("Semantic Color") {
-    ScrollView {
-        VStack {
-            ForEach(SemanticColor.allCases) {
-                Color($0)
-                    .frame(height: 44.0)
-            }
-        }
-        .padding()
-    }
-}
+import Foundation
 
 public struct SemanticColor: CustomStringConvertible, Identifiable {
     public let token: Token
@@ -77,23 +26,24 @@ extension SemanticColor: CaseIterable {
         let tokens: [String: Any] = try Bundle.module.tokens
         let foundationColors: [FoundationColor] = FoundationColor.allCases
         guard let any: [String: [String: [String: String]]] = tokens["\(String.semantic)/light"] as? [String: [String: [String: String]]],
-              let dark: [String: [String: [String: String]]] = tokens["\(String.semantic)/dark"] as? [String: [String: [String: String]]] else {
-            throw DecodingError.typeMismatchJSONDictionary
+            let dark: [String: [String: [String: String]]] = tokens["\(String.semantic)/dark"] as? [String: [String: [String: String]]]
+        else {
+            throw TokenError.jsonObjectWrongType
         }
         var colors: [Self] = []
         for name in any.keys {
             let dictionary: (any: [String: [String: String]], dark: [String: [String: String]]?) = (any[name]!, dark[name])
             for level in dictionary.any.keys {
                 let anyValue: String = dictionary.any[level]?["$value"] ?? ""
-                let anyColor: FoundationColor = foundationColors.filter { "{\($0.token.description)}" == anyValue }[0]
+                let anyColor: FoundationColor = foundationColors.filter { "{\($0.token)}" == anyValue }[0]
                 let darkValue: String = dictionary.dark?[level]?["$value"] ?? ""
-                let darkColor: FoundationColor? = foundationColors.filter { "{\($0.token.description)}" == darkValue }.first
+                let darkColor: FoundationColor? = foundationColors.filter { "{\($0.token)}" == darkValue }.first
                 let token: Token = Token(stringLiteral: "\(String.semantic).\(name).\(level)")
                 let description = dictionary.any[level]?["$description"] ?? ""
                 colors.append(Self(anyColor, dark: darkColor, token: token, description: description))
             }
         }
-        colors = colors.sorted { $0.token.description < $1.token.description }
+        colors = colors.sorted { $0.id < $1.id }
         guard let name, !name.isEmpty else {
             return colors
         }
@@ -111,4 +61,3 @@ extension SemanticColor: CaseIterable {
 private extension String {
     static let semantic: Self = "semantic"
 }
-
