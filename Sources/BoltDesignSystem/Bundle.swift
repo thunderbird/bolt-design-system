@@ -5,6 +5,16 @@
 import Foundation
 
 extension Bundle {
+    var tokens: [String: Any] {
+        get throws {
+            let tokens = try JSONSerialization.jsonObject(with: try tokensData)
+            guard let tokens: [String: Any] = tokens as? [String: Any] else {
+                throw DecodingError.typeMismatchJSONDictionary
+            }
+            return tokens
+        }
+    }
+
     var tokensData: Data {
         get throws { try Data(contentsOf: try tokensURL) }
     }
@@ -18,5 +28,11 @@ extension Bundle {
             throw URLError(.fileDoesNotExist)
         }
         return url
+    }
+}
+
+extension DecodingError {
+    static var typeMismatchJSONDictionary: Self {
+        typeMismatch([String: Any].self, Context(codingPath: [], debugDescription: "JSON object not keyed dictionary"))
     }
 }

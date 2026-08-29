@@ -7,11 +7,11 @@ import Foundation
 import Testing
 
 struct BundleTests {
+    @Test func tokens() throws {
+        #expect(try Bundle.module.tokens.keys.contains("foundation") == true)
+    }
+
     @Test func tokensData() throws {
-        let data: Data = try Bundle.module.tokensData
-        if let string: String = String(data: data, encoding: .utf8) {
-            print(string)
-        }
         #expect(try Bundle.module.tokensData.count > 10_000)
     }
 
