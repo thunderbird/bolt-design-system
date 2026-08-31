@@ -1,0 +1,39 @@
+{
+    "fileScopedDeclarationPrivacy": {
+        "accessLevel": "private"
+    },
+    "indentConditionalCompilationBlocks": false,
+    "indentation": {
+        "spaces": 4
+    },
+    "lineLength": 256,
+    "maximumBlankLines": 1,
+    "multiElementCollectionTrailingCommas": false,
+    "respectsExistingLineBreaks": true,
+    "rules": {
+        "AmbiguousTrailingClosureOverload": true,
+        "DoNotUseSemicolons": true,
+        "FileScopedDeclarationPrivacy": true,
+        "FullyIndirectEnum": true,
+        "GroupNumericLiterals": true,
+        "IdentifiersMustBeASCII": true,
+        "NoAssignmentInExpressions": true,
+        "NoEmptyTrailingClosureParentheses": true,
+        "NoPlaygroundLiterals": true,
+        "NoVoidReturnOnFunctionSignature": true,
+        "OneVariableDeclarationPerLine": true,
+        "OrderedImports": false,
+        "TypeNamesShouldBeCapitalized": true,
+        "UseExplicitNilCheckInConditions": true,
+        "UseLetInEveryBoundCaseVariable": true,
+        "UseShorthandTypeNames": true,
+        "UseSingleLinePropertyGetter": true,
+        "UseSynthesizedInitializer": true,
+        "UseTripleSlashForDocumentationComments": true,
+        "UseWhereClausesInForLoops": false,
+        "ValidateDocumentationComments": false
+    },
+    "spacesAroundRangeFormationOperators": false,
+    "tabWidth": 8,
+    "version": 1
+}

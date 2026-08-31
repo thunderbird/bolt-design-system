@@ -1,2 +1,8 @@
 node_modules
 dist
+
+# Swift
+.DS_Store
+Package.resolved
+.swiftpm
+.build/
