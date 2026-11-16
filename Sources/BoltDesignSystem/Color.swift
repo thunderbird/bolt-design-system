@@ -23,6 +23,25 @@ extension Color {
     }
 }
 
+// MARK: StatusColor
+extension Color {
+    public init(_ color: StatusColor) {
+        let hex: Int = color.hex
+        self.init(red: hex.red, green: hex.green, blue: hex.blue)
+    }
+}
+
+#Preview("Status Color") {
+    ScrollView {
+        VStack {
+            ForEach(StatusColor.allCases) {
+                ColorView(Color($0), description: $0.description)
+            }
+        }
+        .padding()
+    }
+}
+
 // MARK: FoundationColor
 extension Color {
     public init(_ color: FoundationColor) {
