@@ -9,7 +9,7 @@ This repository will soon contain [design tokens](https://www.w3.org/community/d
 `BoltDesignSystem` is a Swift package for iOS, macOS and watchOS. Add this repository as a package dependency, then `import BoltDesignSystem`.
 
 * **Colors:** `FoundationColor` (the palette) and `SemanticColor` (light and dark pairs), used as `Color(_:)`. Values mirror the [color page](https://bolt.thunderbird.net/8b179dbfd/p/61e4c7-color).
-* **Shadows:** `Shadow.level0` to `Shadow.level5`, applied with `.shadow(_:)`. Bolt doesn't use shadows in dark mode, so the modifier does nothing there. Values mirror the [shadow page](https://bolt.thunderbird.net/8b179dbfd/p/711eb4-shadow).
+* **Shadows:** `Shadow.level0` to `Shadow.level5`, as layers of offset, blur, spread and opacity. Bolt doesn't use shadows in dark mode. Values mirror the [shadow page](https://bolt.thunderbird.net/8b179dbfd/p/711eb4-shadow).
 * **Icons:** `Icon` cases are custom SF Symbols, used as `Image(_:)`. They scale with the font and take the foreground style. Two-tone icons render hierarchically by default.
 
 Run the tests with `swift test`.
