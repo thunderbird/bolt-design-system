@@ -124,6 +124,22 @@ public enum Icon: String, CaseIterable, CustomStringConvertible, Identifiable, S
     case home
     case idea
     case image
+    case imageBlocked = "image-blocked"
+    case `import`
+    case inbox
+    case key
+    case link
+    case lock
+    case mail
+    case mailAll = "mail-all"
+    case mailConversation = "mail-conversation"
+    case mailLock = "mail-lock"
+    case mailNew = "mail-new"
+    case mailSave = "mail-save"
+    case mailSearch = "mail-search"
+    case mailUnread = "mail-unread"
+    case mapPin = "map-pin"
+    case maximize
     case circleArrowLeft = "circle-arrow-left"
     case circleArrowRight = "circle-arrow-right"
 
