@@ -8,5 +8,8 @@
       "filename": "arrow-outline-right.svg",
       "idiom": "universal"
     }
-  ]
+  ],
+  "properties": {
+    "symbol-rendering-intent": "hierarchical"
+  }
 }

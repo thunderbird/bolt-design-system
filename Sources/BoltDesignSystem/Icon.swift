@@ -23,11 +23,19 @@ public enum Icon: String, CaseIterable, CustomStringConvertible, Identifiable, S
     case appSwitcher = "app-switcher"
     case appearance
     case archive
-    case arrowOutlineLeft = "arrow-outline-left"
-    case arrowOutlineRight = "arrow-outline-right"
     case arrowDown = "arrow-down"
     case arrowLeft = "arrow-left"
     case arrowRight = "arrow-right"
+    case arrowUp = "arrow-up"
+    case arrowOutlineDown = "arrow-outline-down"
+    case arrowOutlineLeft = "arrow-outline-left"
+    case arrowOutlineRight = "arrow-outline-right"
+    case arrowOutlineUp = "arrow-outline-up"
+    case attachment
+    case bug
+    case calendar
+    case circleArrowLeft = "circle-arrow-left"
+    case circleArrowRight = "circle-arrow-right"
 
     /// Name of the symbol in the package's asset catalog.
     public var name: String { rawValue }
