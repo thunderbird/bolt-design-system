@@ -1,0 +1,5 @@
+# Swift
+.DS_Store
+Package.resolved
+.swiftpm
+.build/
