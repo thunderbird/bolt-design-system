@@ -149,7 +149,7 @@ public enum Icon: String, CaseIterable, CustomStringConvertible, Identifiable, S
     case modeDark = "mode-dark"
     case modeLight = "mode-light"
     case moreHorizontal = "more-horizontal"
-    case moreVertical = "more-vertical"
+    case modeVertical = "mode-vertical"
     case newsletter
     case noEncryption = "no-encryption"
     case notification
