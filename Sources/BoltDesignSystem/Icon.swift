@@ -20,6 +20,14 @@ public enum Icon: String, CaseIterable, CustomStringConvertible, Identifiable, S
     case appAppointment = "app-appointment"
     case appMail = "app-mail"
     case appSend = "app-send"
+    case appSwitcher = "app-switcher"
+    case appearance
+    case archive
+    case arrowOutlineLeft = "arrow-outline-left"
+    case arrowOutlineRight = "arrow-outline-right"
+    case arrowDown = "arrow-down"
+    case arrowLeft = "arrow-left"
+    case arrowRight = "arrow-right"
 
     /// Name of the symbol in the package's asset catalog.
     public var name: String { rawValue }

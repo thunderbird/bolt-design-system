@@ -14,7 +14,7 @@ import UIKit
 
 struct IconTests {
     @Test func allCases() {
-        #expect(Icon.allCases.count == 9)
+        #expect(Icon.allCases.count == 17)
         #expect(Set(Icon.allCases.map(\.name)).count == Icon.allCases.count)
         #expect(Icon.addressBookLock.name == "address-book-lock")
         #expect(Icon.add.description == "add")
