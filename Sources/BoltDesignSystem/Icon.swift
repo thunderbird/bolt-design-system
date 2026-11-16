@@ -202,6 +202,14 @@ public enum Icon: String, CaseIterable, CustomStringConvertible, Identifiable, S
     case upload
     case user
     case usersGroup = "users-group"
+    case userList = "user-list"
+    case userListLock = "user-list-lock"
+    case userListNew = "user-list-new"
+    case userListSave = "user-list-save"
+    case userListSearch = "user-list-search"
+    case video
+    case visibilityOff = "visibility-off"
+    case visibilityOn = "visibility-on"
     case circleArrowLeft = "circle-arrow-left"
     case circleArrowRight = "circle-arrow-right"
 
