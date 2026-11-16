@@ -140,6 +140,38 @@ public enum Icon: String, CaseIterable, CustomStringConvertible, Identifiable, S
     case mailUnread = "mail-unread"
     case mapPin = "map-pin"
     case maximize
+    case menu
+    case minimize
+    case minus
+    case mobile
+    case mobileExport = "mobile-export"
+    case mobileImport = "mobile-import"
+    case modeDark = "mode-dark"
+    case modeLight = "mode-light"
+    case moreHorizontal = "more-horizontal"
+    case moreVertical = "more-vertical"
+    case newsletter
+    case noEncryption = "no-encryption"
+    case notification
+    case notificationDisabled = "notification-disabled"
+    case notificationOn = "notification-on"
+    case offline
+    case online
+    case openExternal = "open-external"
+    case outbox
+    case pin
+    case sortAscending = "sort-ascending"
+    case sortDescending = "sort-descending"
+    case overflow
+    case paste
+    case phoneAnswer = "phone-answer"
+    case phoneEnd = "phone-end"
+    case print
+    case qr
+    case recurrence
+    case recurrenceException = "recurrence-exception"
+    case refresh
+    case reply
     case circleArrowLeft = "circle-arrow-left"
     case circleArrowRight = "circle-arrow-right"
 
