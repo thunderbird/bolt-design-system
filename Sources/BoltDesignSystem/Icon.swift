@@ -74,6 +74,56 @@ public enum Icon: String, CaseIterable, CustomStringConvertible, Identifiable, S
     case circleSubtract = "circle-subtract"
     case close
     case cloudDownload = "cloud-download"
+    case compose
+    case confetti
+    case contact
+    case contactLock = "contact-lock"
+    case contactNew = "contact-new"
+    case contactSave = "contact-save"
+    case contactSearch = "contact-search"
+    case contribute
+    case copy
+    case cut
+    case dashboard
+    case densityCompact = "density-compact"
+    case densityDefault = "density-default"
+    case densityRelaxed = "density-relaxed"
+    case desktop
+    case devices
+    case donate
+    case download
+    case drag
+    case emailAlias = "email-alias"
+    case eventContinue = "event-continue"
+    case eventEnd = "event-end"
+    case eventStart = "event-start"
+    case export
+    case file
+    case fileDraft = "file-draft"
+    case fileLock = "file-lock"
+    case fileNew = "file-new"
+    case fileSave = "file-save"
+    case fileSearch = "file-search"
+    case filter
+    case folder
+    case folderLock = "folder-lock"
+    case folderNew = "folder-new"
+    case folderRss = "folder-rss"
+    case folderSave = "folder-save"
+    case folderSearch = "folder-search"
+    case font
+    case forward
+    case forwardAll = "forward-all"
+    case globe
+    case globeLock = "globe-lock"
+    case globeNew = "globe-new"
+    case globeSave = "globe-save"
+    case globeSearch = "globe-search"
+    case guestAttending = "guest-attending"
+    case guestDeclined = "guest-declined"
+    case home
+    case idea
+    case image
     case circleArrowLeft = "circle-arrow-left"
     case circleArrowRight = "circle-arrow-right"
 

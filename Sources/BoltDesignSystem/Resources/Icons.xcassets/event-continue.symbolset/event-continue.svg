@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="3300" height="2200">
+ <g id="Notes">
+  <rect height="2200" id="artboard" style="fill:white;opacity:1" width="3300" x="0" y="0"/>
+  <text id="template-version" style="stroke:none;fill:black;font-family:sans-serif;font-size:13;text-anchor:end;" transform="matrix(1 0 0 1 3036 1933)">Template v.3.0</text>
+  <text id="descriptive-name" style="stroke:none;fill:black;font-family:sans-serif;font-size:13;text-anchor:end;" transform="matrix(1 0 0 1 3036 1953)">Bolt event-continue</text>
+ </g>
+ <g id="Guides">
+   <line id="Baseline-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="696.0" y2="696.0"/>
+   <line id="Capline-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="625.541" y2="625.541"/>
+   <line id="Baseline-M" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="1126" y2="1126"/>
+   <line id="Capline-M" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="1055.541" y2="1055.541"/>
+   <line id="Baseline-L" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="1556" y2="1556"/>
+   <line id="Capline-L" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="1485.541" y2="1485.541"/>
+   <line id="left-margin-Ultralight-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="515.000" x2="515.000" y1="600" y2="720"/>
+   <line id="right-margin-Ultralight-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="615.000" x2="615.000" y1="600" y2="720"/>
+   <line id="left-margin-Regular-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="1403.000" x2="1403.000" y1="600" y2="720"/>
+   <line id="right-margin-Regular-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="1503.000" x2="1503.000" y1="600" y2="720"/>
+   <line id="left-margin-Black-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="2853.000" x2="2853.000" y1="600" y2="720"/>
+   <line id="right-margin-Black-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="2953.000" x2="2953.000" y1="600" y2="720"/>
+ </g>
+ <g id="Symbols">
+   <g id="Ultralight-S" transform="matrix(1 0 0 1 515.0 696.0)">
+    <path class="monochrome-0 hierarchical-0:primary" d="M 36.890 -53.369 C 37.703 -52.556 37.703 -51.237 36.890 -50.423 L 21.696 -35.230 L 36.890 -20.036 C 37.703 -19.222 37.703 -17.903 36.890 -17.090 C 36.076 -16.276 34.757 -16.276 33.944 -17.090 L 17.277 -33.756 C 16.463 -34.570 16.463 -35.889 17.277 -36.703 L 33.944 -53.369 C 34.757 -54.183 36.076 -54.183 36.890 -53.369 Z M 66.056 -53.369 L 82.723 -36.703 C 83.537 -35.889 83.537 -34.570 82.723 -33.756 L 66.056 -17.090 C 65.243 -16.276 63.924 -16.276 63.110 -17.090 C 62.297 -17.903 62.297 -19.222 63.110 -20.036 L 78.304 -35.230 L 63.110 -50.423 C 62.297 -51.237 62.297 -52.556 63.110 -53.369 C 63.924 -54.183 65.243 -54.183 66.056 -53.369 Z M 66.667 -35.230 C 66.667 -34.079 65.734 -33.146 64.583 -33.146 L 35.417 -33.146 C 34.266 -33.146 33.333 -34.079 33.333 -35.230 C 33.333 -36.380 34.266 -37.313 35.417 -37.313 L 64.583 -37.313 C 65.734 -37.313 66.667 -36.380 66.667 -35.230 Z"/>
+   </g>
+   <g id="Regular-S" transform="matrix(1 0 0 1 1403.0 696.0)">
+    <path class="monochrome-0 hierarchical-0:primary" d="M 36.890 -53.369 C 37.703 -52.556 37.703 -51.237 36.890 -50.423 L 21.696 -35.230 L 36.890 -20.036 C 37.703 -19.222 37.703 -17.903 36.890 -17.090 C 36.076 -16.276 34.757 -16.276 33.944 -17.090 L 17.277 -33.756 C 16.463 -34.570 16.463 -35.889 17.277 -36.703 L 33.944 -53.369 C 34.757 -54.183 36.076 -54.183 36.890 -53.369 Z M 66.056 -53.369 L 82.723 -36.703 C 83.537 -35.889 83.537 -34.570 82.723 -33.756 L 66.056 -17.090 C 65.243 -16.276 63.924 -16.276 63.110 -17.090 C 62.297 -17.903 62.297 -19.222 63.110 -20.036 L 78.304 -35.230 L 63.110 -50.423 C 62.297 -51.237 62.297 -52.556 63.110 -53.369 C 63.924 -54.183 65.243 -54.183 66.056 -53.369 Z M 66.667 -35.230 C 66.667 -34.079 65.734 -33.146 64.583 -33.146 L 35.417 -33.146 C 34.266 -33.146 33.333 -34.079 33.333 -35.230 C 33.333 -36.380 34.266 -37.313 35.417 -37.313 L 64.583 -37.313 C 65.734 -37.313 66.667 -36.380 66.667 -35.230 Z"/>
+   </g>
+   <g id="Black-S" transform="matrix(1 0 0 1 2853.0 696.0)">
+    <path class="monochrome-0 hierarchical-0:primary" d="M 36.890 -53.369 C 37.703 -52.556 37.703 -51.237 36.890 -50.423 L 21.696 -35.230 L 36.890 -20.036 C 37.703 -19.222 37.703 -17.903 36.890 -17.090 C 36.076 -16.276 34.757 -16.276 33.944 -17.090 L 17.277 -33.756 C 16.463 -34.570 16.463 -35.889 17.277 -36.703 L 33.944 -53.369 C 34.757 -54.183 36.076 -54.183 36.890 -53.369 Z M 66.056 -53.369 L 82.723 -36.703 C 83.537 -35.889 83.537 -34.570 82.723 -33.756 L 66.056 -17.090 C 65.243 -16.276 63.924 -16.276 63.110 -17.090 C 62.297 -17.903 62.297 -19.222 63.110 -20.036 L 78.304 -35.230 L 63.110 -50.423 C 62.297 -51.237 62.297 -52.556 63.110 -53.369 C 63.924 -54.183 65.243 -54.183 66.056 -53.369 Z M 66.667 -35.230 C 66.667 -34.079 65.734 -33.146 64.583 -33.146 L 35.417 -33.146 C 34.266 -33.146 33.333 -34.079 33.333 -35.230 C 33.333 -36.380 34.266 -37.313 35.417 -37.313 L 64.583 -37.313 C 65.734 -37.313 66.667 -36.380 66.667 -35.230 Z"/>
+   </g>
+ </g>
+</svg>
