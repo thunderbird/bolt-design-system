@@ -186,6 +186,22 @@ public enum Icon: String, CaseIterable, CustomStringConvertible, Identifiable, S
     case spam
     case sparkle
     case spelling
+    case star
+    case sync
+    case tag
+    case task
+    case taskLock = "task-lock"
+    case tasksNew = "tasks-new"
+    case tasksSave = "tasks-save"
+    case tasksSearch = "tasks-search"
+    case template
+    case threadIgnored = "thread-ignored"
+    case trash
+    case triangleError = "triangle-error"
+    case tune
+    case upload
+    case user
+    case usersGroup = "users-group"
     case circleArrowLeft = "circle-arrow-left"
     case circleArrowRight = "circle-arrow-right"
 
