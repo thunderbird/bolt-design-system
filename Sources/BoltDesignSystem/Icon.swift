@@ -34,6 +34,22 @@ public enum Icon: String, CaseIterable, CustomStringConvertible, Identifiable, S
     case attachment
     case bug
     case calendar
+    case calendarDateTime = "calendar-date-time"
+    case calendarLock = "calendar-lock"
+    case calendarNet = "calendar-net"
+    case calendarSave = "calendar-save"
+    case calendarSearch = "calendar-search"
+    case calendarToday = "calendar-today"
+    case chat
+    case chatLock = "chat-lock"
+    case chatNew = "chat-new"
+    case chatSave = "chat-save"
+    case chatSearch = "chat-search"
+    case check
+    case chevronDown = "chevron-down"
+    case chevronLeft = "chevron-left"
+    case chevronRight = "chevron-right"
+    case chevronUp = "chevron-up"
     case circleArrowLeft = "circle-arrow-left"
     case circleArrowRight = "circle-arrow-right"
 
