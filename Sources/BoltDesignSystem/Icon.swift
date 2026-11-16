@@ -172,6 +172,20 @@ public enum Icon: String, CaseIterable, CustomStringConvertible, Identifiable, S
     case recurrenceException = "recurrence-exception"
     case refresh
     case reply
+    case replyAll = "reply-all"
+    case restore
+    case rss
+    case sort
+    case search
+    case send
+    case server
+    case settings
+    case shield
+    case signIn = "sign-in"
+    case signOut = "sign-out"
+    case spam
+    case sparkle
+    case spelling
     case circleArrowLeft = "circle-arrow-left"
     case circleArrowRight = "circle-arrow-right"
 

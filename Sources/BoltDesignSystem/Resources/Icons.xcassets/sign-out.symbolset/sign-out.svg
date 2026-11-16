@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="3300" height="2200">
+ <g id="Notes">
+  <rect height="2200" id="artboard" style="fill:white;opacity:1" width="3300" x="0" y="0"/>
+  <text id="template-version" style="stroke:none;fill:black;font-family:sans-serif;font-size:13;text-anchor:end;" transform="matrix(1 0 0 1 3036 1933)">Template v.3.0</text>
+  <text id="descriptive-name" style="stroke:none;fill:black;font-family:sans-serif;font-size:13;text-anchor:end;" transform="matrix(1 0 0 1 3036 1953)">Bolt sign-out</text>
+ </g>
+ <g id="Guides">
+   <line id="Baseline-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="696.0" y2="696.0"/>
+   <line id="Capline-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="625.541" y2="625.541"/>
+   <line id="Baseline-M" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="1126" y2="1126"/>
+   <line id="Capline-M" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="1055.541" y2="1055.541"/>
+   <line id="Baseline-L" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="1556" y2="1556"/>
+   <line id="Capline-L" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="1485.541" y2="1485.541"/>
+   <line id="left-margin-Ultralight-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="515.000" x2="515.000" y1="600" y2="720"/>
+   <line id="right-margin-Ultralight-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="581.667" x2="581.667" y1="600" y2="720"/>
+   <line id="left-margin-Regular-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="1403.000" x2="1403.000" y1="600" y2="720"/>
+   <line id="right-margin-Regular-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="1469.667" x2="1469.667" y1="600" y2="720"/>
+   <line id="left-margin-Black-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="2853.000" x2="2853.000" y1="600" y2="720"/>
+   <line id="right-margin-Black-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="2919.667" x2="2919.667" y1="600" y2="720"/>
+ </g>
+ <g id="Symbols">
+   <g id="Ultralight-S" transform="matrix(1 0 0 1 515.0 696.0)">
+    <path class="monochrome-0 hierarchical-0:primary" d="M 54.167 -10.230 L 33.583 -10.230 L 33.583 -14.396 L 50.000 -14.396 L 50.000 -56.063 L 33.583 -56.063 L 33.583 -60.230 L 54.167 -60.230 Z M 36.911 -36.703 L 38.384 -35.230 L 36.911 -33.756 L 25.077 -21.923 L 22.131 -24.869 L 30.408 -33.146 L 4.417 -33.146 L 4.417 -37.313 L 30.408 -37.313 L 22.131 -45.590 L 25.077 -48.536 Z"/>
+   </g>
+   <g id="Regular-S" transform="matrix(1 0 0 1 1403.0 696.0)">
+    <path class="monochrome-0 hierarchical-0:primary" d="M 54.167 -10.230 L 33.583 -10.230 L 33.583 -14.396 L 50.000 -14.396 L 50.000 -56.063 L 33.583 -56.063 L 33.583 -60.230 L 54.167 -60.230 Z M 36.911 -36.703 L 38.384 -35.230 L 36.911 -33.756 L 25.077 -21.923 L 22.131 -24.869 L 30.408 -33.146 L 4.417 -33.146 L 4.417 -37.313 L 30.408 -37.313 L 22.131 -45.590 L 25.077 -48.536 Z"/>
+   </g>
+   <g id="Black-S" transform="matrix(1 0 0 1 2853.0 696.0)">
+    <path class="monochrome-0 hierarchical-0:primary" d="M 54.167 -10.230 L 33.583 -10.230 L 33.583 -14.396 L 50.000 -14.396 L 50.000 -56.063 L 33.583 -56.063 L 33.583 -60.230 L 54.167 -60.230 Z M 36.911 -36.703 L 38.384 -35.230 L 36.911 -33.756 L 25.077 -21.923 L 22.131 -24.869 L 30.408 -33.146 L 4.417 -33.146 L 4.417 -37.313 L 30.408 -37.313 L 22.131 -45.590 L 25.077 -48.536 Z"/>
+   </g>
+ </g>
+</svg>
