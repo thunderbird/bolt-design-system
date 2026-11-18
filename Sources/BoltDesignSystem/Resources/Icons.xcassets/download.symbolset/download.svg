@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="3300" height="2200">
+ <g id="Notes">
+  <rect height="2200" id="artboard" style="fill:white;opacity:1" width="3300" x="0" y="0"/>
+  <text id="template-version" style="stroke:none;fill:black;font-family:sans-serif;font-size:13;text-anchor:end;" transform="matrix(1 0 0 1 3036 1933)">Template v.3.0</text>
+  <text id="descriptive-name" style="stroke:none;fill:black;font-family:sans-serif;font-size:13;text-anchor:end;" transform="matrix(1 0 0 1 3036 1953)">Bolt download</text>
+ </g>
+ <g id="Guides">
+   <line id="Baseline-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="696.0" y2="696.0"/>
+   <line id="Capline-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="625.541" y2="625.541"/>
+   <line id="Baseline-M" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="1126" y2="1126"/>
+   <line id="Capline-M" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="1055.541" y2="1055.541"/>
+   <line id="Baseline-L" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="1556" y2="1556"/>
+   <line id="Capline-L" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="1485.541" y2="1485.541"/>
+   <line id="left-margin-Ultralight-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="515.000" x2="515.000" y1="600" y2="720"/>
+   <line id="right-margin-Ultralight-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="615.000" x2="615.000" y1="600" y2="720"/>
+   <line id="left-margin-Regular-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="1403.000" x2="1403.000" y1="600" y2="720"/>
+   <line id="right-margin-Regular-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="1503.000" x2="1503.000" y1="600" y2="720"/>
+   <line id="left-margin-Black-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="2853.000" x2="2853.000" y1="600" y2="720"/>
+   <line id="right-margin-Black-S" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="2953.000" x2="2953.000" y1="600" y2="720"/>
+ </g>
+ <g id="Symbols">
+   <g id="Ultralight-S" transform="matrix(1 0 0 1 515.0 696.0)">
+    <path class="monochrome-0 hierarchical-0:primary" d="M 31.250 -14.271 C 31.250 -13.190 32.127 -12.313 33.208 -12.313 L 66.792 -12.313 C 67.873 -12.313 68.750 -13.190 68.750 -14.271 L 68.750 -20.396 L 72.917 -20.396 L 72.917 -14.271 C 72.917 -10.888 70.174 -8.146 66.792 -8.146 L 33.208 -8.146 C 29.826 -8.146 27.083 -10.888 27.083 -14.271 L 27.083 -20.396 L 31.250 -20.396 Z M 52.083 -27.896 L 64.875 -40.813 L 70.667 -40.813 L 50.000 -19.417 L 29.333 -40.813 L 35.125 -40.813 L 47.917 -27.896 L 47.917 -62.063 L 52.083 -62.063 Z"/>
+   </g>
+   <g id="Regular-S" transform="matrix(1 0 0 1 1403.0 696.0)">
+    <path class="monochrome-0 hierarchical-0:primary" d="M 31.250 -14.271 C 31.250 -13.190 32.127 -12.313 33.208 -12.313 L 66.792 -12.313 C 67.873 -12.313 68.750 -13.190 68.750 -14.271 L 68.750 -20.396 L 72.917 -20.396 L 72.917 -14.271 C 72.917 -10.888 70.174 -8.146 66.792 -8.146 L 33.208 -8.146 C 29.826 -8.146 27.083 -10.888 27.083 -14.271 L 27.083 -20.396 L 31.250 -20.396 Z M 52.083 -27.896 L 64.875 -40.813 L 70.667 -40.813 L 50.000 -19.417 L 29.333 -40.813 L 35.125 -40.813 L 47.917 -27.896 L 47.917 -62.063 L 52.083 -62.063 Z"/>
+   </g>
+   <g id="Black-S" transform="matrix(1 0 0 1 2853.0 696.0)">
+    <path class="monochrome-0 hierarchical-0:primary" d="M 31.250 -14.271 C 31.250 -13.190 32.127 -12.313 33.208 -12.313 L 66.792 -12.313 C 67.873 -12.313 68.750 -13.190 68.750 -14.271 L 68.750 -20.396 L 72.917 -20.396 L 72.917 -14.271 C 72.917 -10.888 70.174 -8.146 66.792 -8.146 L 33.208 -8.146 C 29.826 -8.146 27.083 -10.888 27.083 -14.271 L 27.083 -20.396 L 31.250 -20.396 Z M 52.083 -27.896 L 64.875 -40.813 L 70.667 -40.813 L 50.000 -19.417 L 29.333 -40.813 L 35.125 -40.813 L 47.917 -27.896 L 47.917 -62.063 L 52.083 -62.063 Z"/>
+   </g>
+ </g>
+</svg>
