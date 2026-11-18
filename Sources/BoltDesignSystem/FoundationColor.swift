@@ -8,6 +8,12 @@ public struct FoundationColor: CustomStringConvertible, Identifiable, Sendable {
     public let token: Token
     public let hex: Int
 
+    /// Creates the palette color with the given name.
+    public init(_ name: Name) {
+        let definition: (hex: Int, description: String) = name.definition
+        self.init(hex: definition.hex, token: Token(stringLiteral: "foundation.\(name.rawValue)"), description: definition.description)
+    }
+
     public init(hex string: String, token: Token = "", description: String = "") {
         self.init(hex: string.hex, token: token, description: description)
     }
@@ -25,6 +31,184 @@ public struct FoundationColor: CustomStringConvertible, Identifiable, Sendable {
     public var id: String { token.description }
 }
 
+extension FoundationColor {
+
+    /// The name of a color in Bolt's foundation palette, such as ``blue700`` for `foundation.blue.700`.
+    public enum Name: String, CaseIterable, Sendable {
+        case blue050 = "blue.050"
+        case blue300 = "blue.300"
+        case blue400 = "blue.400"
+        case blue500 = "blue.500"
+        case blue600 = "blue.600"
+        case blue700 = "blue.700"
+        case blue750 = "blue.750"
+        case blue800 = "blue.800"
+        case blue900 = "blue.900"
+        case blue950 = "blue.950"
+        case green050 = "green.050"
+        case green100 = "green.100"
+        case green200 = "green.200"
+        case green300 = "green.300"
+        case green400 = "green.400"
+        case green700 = "green.700"
+        case green800 = "green.800"
+        case green900 = "green.900"
+        case green950 = "green.950"
+        case ink300 = "ink.300"
+        case ink700 = "ink.700"
+        case neutral000 = "neutral.000"
+        case neutral025 = "neutral.025"
+        case neutral050 = "neutral.050"
+        case neutral100 = "neutral.100"
+        case neutral150 = "neutral.150"
+        case neutral200 = "neutral.200"
+        case neutral300 = "neutral.300"
+        case neutral400 = "neutral.400"
+        case neutral500 = "neutral.500"
+        case neutral600 = "neutral.600"
+        case neutral650 = "neutral.650"
+        case neutral700 = "neutral.700"
+        case neutral750 = "neutral.750"
+        case neutral800 = "neutral.800"
+        case neutral850 = "neutral.850"
+        case neutral900 = "neutral.900"
+        case neutral930 = "neutral.930"
+        case neutral940 = "neutral.940"
+        case neutral950 = "neutral.950"
+        case neutral975 = "neutral.975"
+        case orange200 = "orange.200"
+        case orange500 = "orange.500"
+        case pink200 = "pink.200"
+        case pink500 = "pink.500"
+        case purple050 = "purple.050"
+        case purple100 = "purple.100"
+        case purple200 = "purple.200"
+        case purple300 = "purple.300"
+        case purple500 = "purple.500"
+        case purple700 = "purple.700"
+        case purple800 = "purple.800"
+        case purple900 = "purple.900"
+        case purple950 = "purple.950"
+        case red100 = "red.100"
+        case red200 = "red.200"
+        case red300 = "red.300"
+        case red400 = "red.400"
+        case red500 = "red.500"
+        case red600 = "red.600"
+        case red700 = "red.700"
+        case red800 = "red.800"
+        case red900 = "red.900"
+        case red950 = "red.950"
+        case teal200 = "teal.200"
+        case teal500 = "teal.500"
+        case userAccentBlue = "user-accent.blue"
+        case userAccentGraphite = "user-accent.graphite"
+        case userAccentGreen = "user-accent.green"
+        case userAccentOrange = "user-accent.orange"
+        case userAccentPink = "user-accent.pink"
+        case userAccentPurple = "user-accent.purple"
+        case userAccentRed = "user-accent.red"
+        case userAccentYellow = "user-accent.yellow"
+        case yellow050 = "yellow.050"
+        case yellow100 = "yellow.100"
+        case yellow200 = "yellow.200"
+        case yellow300 = "yellow.300"
+        case yellow400 = "yellow.400"
+        case yellow500 = "yellow.500"
+        case yellow600 = "yellow.600"
+        case yellow900 = "yellow.900"
+        case yellow950 = "yellow.950"
+
+        var definition: (hex: Int, description: String) {
+            switch self {
+            case .blue050: (0xF0F8FF, "")
+            case .blue300: (0x5FA6E8, "Branded text and icons that reinforce Thunderbird identity.")
+            case .blue400: (0x58C9FF, "")
+            case .blue500: (0x32AEFF, "")
+            case .blue600: (0x1B90F5, "")
+            case .blue700: (0x1373D9, "")
+            case .blue750: (0x0B5CBD, "Interactive, selected, linked, or emphasized content.")
+            case .blue800: (0x175FB6, "")
+            case .blue900: (0x19518F, "")
+            case .blue950: (0x262C40, "")
+            case .green050: (0xF4F9F4, "")
+            case .green100: (0xDEFAE7, "")
+            case .green200: (0xC0F2CF, "")
+            case .green300: (0x8EE7AA, "")
+            case .green400: (0x55D37E, "")
+            case .green700: (0x1D783B, "")
+            case .green800: (0x1C5F32, "")
+            case .green900: (0x194E2C, "")
+            case .green950: (0x082B16, "")
+            case .ink300: (0xC3CADE, "")
+            case .ink700: (0x6E6F9B, "")
+            case .neutral000: (0xFFFFFF, "Menus, dialogs, cards, floating elements")
+            case .neutral025: (0xFCFCFD, "Main application and content background")
+            case .neutral050: (0xF7F7F8, "Darkest recessed layer or Primary text and icons requiring the strongest emphasis.")
+            case .neutral100: (0xEFEFF1, "Hover fills, grouped sections, muted containers")
+            case .neutral150: (0xE4E4E7, "Strong separation, selected regions, deeper inset areas")
+            case .neutral200: (0xD9D9DE, "Default component outlines and dividers")
+            case .neutral300: (0xD4D4D8, "Supporting text and icons with reduced prominence.")
+            case .neutral400: (0xA1A1AA, "Strong separation, focus-adjacent outlines, emphasized controls or Low-emphasis metadata, hints, and non-critical information.")
+            case .neutral500: (0x71717A, "Applied frequently for dividers and outlines")
+            case .neutral600: (0x71717A, "Low-emphasis metadata, hints, and non-critical information.")
+            case .neutral650: (0x52525B, "Distinct from deep surfaces")
+            case .neutral700: (0x52525B, "Supporting text and icons with reduced prominence.")
+            case .neutral750: (0x3F3F46, "Strong surface separation")
+            case .neutral800: (0x4C4D58, "Text + icon secondary")
+            case .neutral850: (0x2B2B2F, "Clearly raised above base")
+            case .neutral900: (0x232326, "Quiet grouped or secondary surface")
+            case .neutral930: (0x262D3B, "Applied frequently to backgrounds, surfaces, dividers and outlines")
+            case .neutral940: (0x1A202C, "Applied frequently for backgrounds, surfaces, dividers and outlines")
+            case .neutral950: (0x18181B, "Main application surface or Primary text and icons requiring the strongest emphasis")
+            case .neutral975: (0x111113, "Darkest recessed layer")
+            case .orange200: (0xFEC18A, "")
+            case .orange500: (0xEA7308, "")
+            case .pink200: (0xFBD3F6, "")
+            case .pink500: (0xE247C4, "")
+            case .purple050: (0xFAF5FF, "")
+            case .purple100: (0xF5E8FF, "")
+            case .purple200: (0xECD5FF, "")
+            case .purple300: (0xDDB4FE, "Applied sparingly to highlight information.")
+            case .purple500: (0xAE55F7, "")
+            case .purple700: (0x8022CE, "")
+            case .purple800: (0x6B21A8, "")
+            case .purple900: (0x571C87, "")
+            case .purple950: (0x3A0764, "")
+            case .red100: (0xFEF2F2, "")
+            case .red200: (0xFECACA, "")
+            case .red300: (0xFCA5A5, "")
+            case .red400: (0xF87171, "")
+            case .red500: (0xF05252, "Used for critical text messaging")
+            case .red600: (0xDC2626, "")
+            case .red700: (0xB91C1C, "")
+            case .red800: (0x991B1B, "")
+            case .red900: (0x7F1D1D, "")
+            case .red950: (0x450A0A, "")
+            case .teal200: (0xA3ECE3, "")
+            case .teal500: (0x25A6A0, "")
+            case .userAccentBlue: (0x0A84FF, "")
+            case .userAccentGraphite: (0xB0B0B0, "")
+            case .userAccentGreen: (0x34C759, "")
+            case .userAccentOrange: (0xFF8C00, "")
+            case .userAccentPink: (0xE91E63, "")
+            case .userAccentPurple: (0x7753CC, "")
+            case .userAccentRed: (0xE74642, "")
+            case .userAccentYellow: (0xF4C430, "")
+            case .yellow050: (0xFEFAE8, "")
+            case .yellow100: (0xFEF2C3, "")
+            case .yellow200: (0xFEE78A, "")
+            case .yellow300: (0xFDD847, "")
+            case .yellow400: (0xFACC15, "")
+            case .yellow500: (0xEABD08, "")
+            case .yellow600: (0xCAA204, "")
+            case .yellow900: (0x713F12, "")
+            case .yellow950: (0x423606, "")
+            }
+        }
+    }
+}
+
 extension FoundationColor: CaseIterable {
     static func allCases(name: String?, level: String? = nil) -> [Self] {
         var colors: [Self] = allCases
@@ -38,97 +222,6 @@ extension FoundationColor: CaseIterable {
         return colors.filter { level == $0.token.level }
     }
 
-    /// Looks up a color by its token, with or without the `foundation.` prefix, e.g. `blue.700`.
-    static func named(_ token: String) -> Self? {
-        index[token.hasPrefix("foundation.") ? token : "foundation.\(token)"]
-    }
-
     // MARK: CaseIterable
-    public static let allCases: [Self] = [
-        Self(hex: 0xF0F8FF, token: "foundation.blue.050", description: ""),
-        Self(hex: 0x5FA6E8, token: "foundation.blue.300", description: "Branded text and icons that reinforce Thunderbird identity."),
-        Self(hex: 0x58C9FF, token: "foundation.blue.400", description: ""),
-        Self(hex: 0x32AEFF, token: "foundation.blue.500", description: ""),
-        Self(hex: 0x1B90F5, token: "foundation.blue.600", description: ""),
-        Self(hex: 0x1373D9, token: "foundation.blue.700", description: ""),
-        Self(hex: 0x0B5CBD, token: "foundation.blue.750", description: "Interactive, selected, linked, or emphasized content."),
-        Self(hex: 0x175FB6, token: "foundation.blue.800", description: ""),
-        Self(hex: 0x19518F, token: "foundation.blue.900", description: ""),
-        Self(hex: 0x262C40, token: "foundation.blue.950", description: ""),
-        Self(hex: 0xF4F9F4, token: "foundation.green.050", description: ""),
-        Self(hex: 0xDEFAE7, token: "foundation.green.100", description: ""),
-        Self(hex: 0xC0F2CF, token: "foundation.green.200", description: ""),
-        Self(hex: 0x8EE7AA, token: "foundation.green.300", description: ""),
-        Self(hex: 0x55D37E, token: "foundation.green.400", description: ""),
-        Self(hex: 0x1D783B, token: "foundation.green.700", description: ""),
-        Self(hex: 0x1C5F32, token: "foundation.green.800", description: ""),
-        Self(hex: 0x194E2C, token: "foundation.green.900", description: ""),
-        Self(hex: 0x082B16, token: "foundation.green.950", description: ""),
-        Self(hex: 0xC3CADE, token: "foundation.ink.300", description: ""),
-        Self(hex: 0x6E6F9B, token: "foundation.ink.700", description: ""),
-        Self(hex: 0xFFFFFF, token: "foundation.neutral.000", description: "Menus, dialogs, cards, floating elements"),
-        Self(hex: 0xFCFCFD, token: "foundation.neutral.025", description: "Main application and content background"),
-        Self(hex: 0xF7F7F8, token: "foundation.neutral.050", description: "Darkest recessed layer or Primary text and icons requiring the strongest emphasis."),
-        Self(hex: 0xEFEFF1, token: "foundation.neutral.100", description: "Hover fills, grouped sections, muted containers"),
-        Self(hex: 0xE4E4E7, token: "foundation.neutral.150", description: "Strong separation, selected regions, deeper inset areas"),
-        Self(hex: 0xD9D9DE, token: "foundation.neutral.200", description: "Default component outlines and dividers"),
-        Self(hex: 0xD4D4D8, token: "foundation.neutral.300", description: "Supporting text and icons with reduced prominence."),
-        Self(hex: 0xA1A1AA, token: "foundation.neutral.400", description: "Strong separation, focus-adjacent outlines, emphasized controls or Low-emphasis metadata, hints, and non-critical information."),
-        Self(hex: 0x71717A, token: "foundation.neutral.500", description: "Applied frequently for dividers and outlines"),
-        Self(hex: 0x71717A, token: "foundation.neutral.600", description: "Low-emphasis metadata, hints, and non-critical information."),
-        Self(hex: 0x52525B, token: "foundation.neutral.650", description: "Distinct from deep surfaces"),
-        Self(hex: 0x52525B, token: "foundation.neutral.700", description: "Supporting text and icons with reduced prominence."),
-        Self(hex: 0x3F3F46, token: "foundation.neutral.750", description: "Strong surface separation"),
-        Self(hex: 0x4C4D58, token: "foundation.neutral.800", description: "Text + icon secondary"),
-        Self(hex: 0x2B2B2F, token: "foundation.neutral.850", description: "Clearly raised above base"),
-        Self(hex: 0x232326, token: "foundation.neutral.900", description: "Quiet grouped or secondary surface"),
-        Self(hex: 0x262D3B, token: "foundation.neutral.930", description: "Applied frequently to backgrounds, surfaces, dividers and outlines"),
-        Self(hex: 0x1A202C, token: "foundation.neutral.940", description: "Applied frequently for backgrounds, surfaces, dividers and outlines"),
-        Self(hex: 0x18181B, token: "foundation.neutral.950", description: "Main application surface or Primary text and icons requiring the strongest emphasis"),
-        Self(hex: 0x111113, token: "foundation.neutral.975", description: "Darkest recessed layer"),
-        Self(hex: 0xFEC18A, token: "foundation.orange.200", description: ""),
-        Self(hex: 0xEA7308, token: "foundation.orange.500", description: ""),
-        Self(hex: 0xFBD3F6, token: "foundation.pink.200", description: ""),
-        Self(hex: 0xE247C4, token: "foundation.pink.500", description: ""),
-        Self(hex: 0xFAF5FF, token: "foundation.purple.050", description: ""),
-        Self(hex: 0xF5E8FF, token: "foundation.purple.100", description: ""),
-        Self(hex: 0xECD5FF, token: "foundation.purple.200", description: ""),
-        Self(hex: 0xDDB4FE, token: "foundation.purple.300", description: "Applied sparingly to highlight information."),
-        Self(hex: 0xAE55F7, token: "foundation.purple.500", description: ""),
-        Self(hex: 0x8022CE, token: "foundation.purple.700", description: ""),
-        Self(hex: 0x6B21A8, token: "foundation.purple.800", description: ""),
-        Self(hex: 0x571C87, token: "foundation.purple.900", description: ""),
-        Self(hex: 0x3A0764, token: "foundation.purple.950", description: ""),
-        Self(hex: 0xFEF2F2, token: "foundation.red.100", description: ""),
-        Self(hex: 0xFECACA, token: "foundation.red.200", description: ""),
-        Self(hex: 0xFCA5A5, token: "foundation.red.300", description: ""),
-        Self(hex: 0xF87171, token: "foundation.red.400", description: ""),
-        Self(hex: 0xF05252, token: "foundation.red.500", description: "Used for critical text messaging"),
-        Self(hex: 0xDC2626, token: "foundation.red.600", description: ""),
-        Self(hex: 0xB91C1C, token: "foundation.red.700", description: ""),
-        Self(hex: 0x991B1B, token: "foundation.red.800", description: ""),
-        Self(hex: 0x7F1D1D, token: "foundation.red.900", description: ""),
-        Self(hex: 0x450A0A, token: "foundation.red.950", description: ""),
-        Self(hex: 0xA3ECE3, token: "foundation.teal.200", description: ""),
-        Self(hex: 0x25A6A0, token: "foundation.teal.500", description: ""),
-        Self(hex: 0x0A84FF, token: "foundation.user-accent.blue", description: ""),
-        Self(hex: 0xB0B0B0, token: "foundation.user-accent.graphite", description: ""),
-        Self(hex: 0x34C759, token: "foundation.user-accent.green", description: ""),
-        Self(hex: 0xFF8C00, token: "foundation.user-accent.orange", description: ""),
-        Self(hex: 0xE91E63, token: "foundation.user-accent.pink", description: ""),
-        Self(hex: 0x7753CC, token: "foundation.user-accent.purple", description: ""),
-        Self(hex: 0xE74642, token: "foundation.user-accent.red", description: ""),
-        Self(hex: 0xF4C430, token: "foundation.user-accent.yellow", description: ""),
-        Self(hex: 0xFEFAE8, token: "foundation.yellow.050", description: ""),
-        Self(hex: 0xFEF2C3, token: "foundation.yellow.100", description: ""),
-        Self(hex: 0xFEE78A, token: "foundation.yellow.200", description: ""),
-        Self(hex: 0xFDD847, token: "foundation.yellow.300", description: ""),
-        Self(hex: 0xFACC15, token: "foundation.yellow.400", description: ""),
-        Self(hex: 0xEABD08, token: "foundation.yellow.500", description: ""),
-        Self(hex: 0xCAA204, token: "foundation.yellow.600", description: ""),
-        Self(hex: 0x713F12, token: "foundation.yellow.900", description: ""),
-        Self(hex: 0x423606, token: "foundation.yellow.950", description: "")
-    ]
-
-    private static let index: [String: Self] = Dictionary(uniqueKeysWithValues: allCases.map { ($0.id, $0) })
+    public static let allCases: [Self] = Name.allCases.map { Self($0) }
 }

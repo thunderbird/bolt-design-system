@@ -21,6 +21,124 @@ public struct SemanticColor: CustomStringConvertible, Identifiable, Sendable {
     public var id: String { token.description }
 }
 
+extension SemanticColor {
+
+    /// An accent hue.
+    public enum Accent: String, CaseIterable, Sendable {
+        case blue, ink, orange, pink, purple, teal
+    }
+
+    /// The state of a critical, primary, success or warning color; `soft` is its surface tint.
+    public enum State: String, CaseIterable, Sendable {
+        case `default`, hover, pressed, soft
+    }
+
+    /// A surface level or border.
+    public enum Surface: String, CaseIterable, Sendable {
+        case base, border, borderIntense = "border-intense", deep, lower, raised, subtle
+    }
+
+    /// A role for text and icons.
+    public enum TextIcon: String, CaseIterable, Sendable {
+        case base, baseInverted = "base-inverted", brand, critical, disabled, highlight, muted, secondary, success, warning
+    }
+
+    /// The `semantic.accent` color for an accent.
+    public static func accent(_ accent: Accent) -> Self {
+        let (any, dark, description): (FoundationColor.Name, FoundationColor.Name, String) =
+            switch accent {
+            case .blue: (.blue400, .blue400, "Used for accents, gradients, highlights *Do not use with text")
+            case .ink: (.ink700, .ink300, "Used for accents, gradients, highlights *Do not use with text")
+            case .orange: (.orange500, .orange200, "Used for accents, gradients, highlights *Do not use with text")
+            case .pink: (.pink500, .pink200, "Used for accents, gradients, highlights *Do not use with text")
+            case .purple: (.purple500, .purple700, "Used for accents, gradients, highlights *Do not use with text")
+            case .teal: (.teal500, .teal200, "Used for accents, gradients, highlights *Do not use with text")
+            }
+        return Self(FoundationColor(any), dark: FoundationColor(dark), token: Token(stringLiteral: "semantic.accent.\(accent.rawValue)"), description: description)
+    }
+
+    /// The `semantic.critical` color for a state.
+    public static func critical(_ state: State) -> Self {
+        let (any, dark, description): (FoundationColor.Name, FoundationColor.Name, String) =
+            switch state {
+            case .default: (.red800, .red300, "Applied sparingly to show negative feedback/status or dangerous actions.")
+            case .hover: (.red900, .red400, "Applied sparingly to show negative feedback/status or dangerous actions.")
+            case .pressed: (.red950, .red500, "Applied sparingly to show negative feedback/status or dangerous actions.")
+            case .soft: (.red100, .red900, "Applied sparingly to show negative feedback/status or dangerous actions.")
+            }
+        return Self(FoundationColor(any), dark: FoundationColor(dark), token: Token(stringLiteral: "semantic.critical.\(state.rawValue)"), description: description)
+    }
+
+    /// The `semantic.primary` color for a state.
+    public static func primary(_ state: State) -> Self {
+        let (any, dark, description): (FoundationColor.Name, FoundationColor, String) =
+            switch state {
+            case .default: (.blue700, FoundationColor(hex: 0x75B4E6, token: "unlisted.primary.default.dark"), "Applied frequently to surfaces highlight actions & information.")
+            case .hover: (.blue800, FoundationColor(hex: 0x5FA0D6, token: "unlisted.primary.hover.dark"), "Applied frequently to surfaces highlight actions & information.")
+            case .pressed: (.blue900, FoundationColor(hex: 0x4C8CC2, token: "unlisted.primary.pressed.dark"), "Applied frequently to surfaces highlight actions & information.")
+            case .soft: (.blue050, FoundationColor(.blue950), "Applied to surfaces")
+            }
+        return Self(FoundationColor(any), dark: dark, token: Token(stringLiteral: "semantic.primary.\(state.rawValue)"), description: description)
+    }
+
+    /// The `semantic.success` color for a state.
+    public static func success(_ state: State) -> Self {
+        let (any, dark, description): (FoundationColor.Name, FoundationColor, String) =
+            switch state {
+            case .default: (.green700, FoundationColor(.green100), "Applied sparingly to show positive feedback/status.")
+            case .hover: (.green800, FoundationColor(.green200), "Applied sparingly to show positive feedback/status.")
+            case .pressed: (.green900, FoundationColor(hex: 0x81D4B5, token: "unlisted.success.pressed.dark"), "Applied sparingly to show positive feedback/status.")
+            case .soft: (.green050, FoundationColor(.green950), "Applied to surfaces")
+            }
+        return Self(FoundationColor(any), dark: dark, token: Token(stringLiteral: "semantic.success.\(state.rawValue)"), description: description)
+    }
+
+    /// The `semantic.surface` color for a surface.
+    public static func surface(_ surface: Surface) -> Self {
+        let (any, dark, description): (FoundationColor.Name, FoundationColor.Name, String) =
+            switch surface {
+            case .base: (.neutral025, .neutral950, "Main application and content background")
+            case .border: (.neutral200, .neutral650, "Strong separation, selected regions, deeper inset areas")
+            case .borderIntense: (.neutral400, .neutral500, "Strong separation, focus-adjacent outlines, emphasized controls or Low-emphasis metadata, hints, and non-critical information.")
+            case .deep: (.neutral150, .neutral750, "Strong separation, selected regions, deeper inset areas")
+            case .lower: (.neutral050, .neutral975, "Darkest recessed layer or Primary text and icons requiring the strongest emphasis.")
+            case .raised: (.neutral000, .neutral850, "Menus, dialogs, cards, floating elements")
+            case .subtle: (.neutral100, .neutral900, "Hover fills, grouped sections, muted containers")
+            }
+        return Self(FoundationColor(any), dark: FoundationColor(dark), token: Token(stringLiteral: "semantic.surface.\(surface.rawValue)"), description: description)
+    }
+
+    /// The `semantic.text-icon` color for a role.
+    public static func textIcon(_ role: TextIcon) -> Self {
+        let (any, dark, description): (FoundationColor.Name, FoundationColor.Name, String) =
+            switch role {
+            case .base: (.neutral950, .neutral050, "Main application surface or Primary text and icons requiring the strongest emphasis")
+            case .baseInverted: (.neutral025, .neutral950, "Applied frequently for text and icons.")
+            case .brand: (.blue750, .blue300, "Branded text and icons that reinforce Thunderbird identity.")
+            case .critical: (.red700, .red400, "Errors, destructive actions, and urgent information.")
+            case .disabled: (.neutral400, .neutral500, "Strong separation, focus-adjacent outlines, emphasized controls or Low-emphasis metadata, hints, and non-critical information.")
+            case .highlight: (.blue700, .blue400, "Interactive, selected, linked, or emphasized content.")
+            case .muted: (.neutral600, .neutral400, "Low-emphasis metadata, hints, and non-critical information.")
+            case .secondary: (.neutral700, .neutral300, "Supporting text and icons with reduced prominence.")
+            case .success: (.green800, .green400, "Successful states, confirmations, and positive outcomes.")
+            case .warning: (.yellow900, .yellow200, "Cautionary information that may require attention.")
+            }
+        return Self(FoundationColor(any), dark: FoundationColor(dark), token: Token(stringLiteral: "semantic.text-icon.\(role.rawValue)"), description: description)
+    }
+
+    /// The `semantic.warning` color for a state.
+    public static func warning(_ state: State) -> Self {
+        let (any, dark, description): (FoundationColor.Name, FoundationColor.Name, String) =
+            switch state {
+            case .default: (.yellow400, .yellow100, "Applied sparingly to show warning feedback/status.")
+            case .hover: (.yellow500, .yellow200, "Applied sparingly to show warning feedback/status.")
+            case .pressed: (.yellow600, .yellow300, "Applied sparingly to show warning feedback/status.")
+            case .soft: (.yellow050, .yellow950, "Applied sparingly to show warning feedback/status.")
+            }
+        return Self(FoundationColor(any), dark: FoundationColor(dark), token: Token(stringLiteral: "semantic.warning.\(state.rawValue)"), description: description)
+    }
+}
+
 extension SemanticColor: CaseIterable {
     static func allCases(name: String?, level: String? = nil) -> [Self] {
         var colors: [Self] = allCases
@@ -35,55 +153,8 @@ extension SemanticColor: CaseIterable {
     }
 
     // MARK: CaseIterable
-    public static let allCases: [Self] = [
-        Self(foundation("blue.400"), dark: foundation("blue.400"), token: "semantic.accent.blue", description: "Used for accents, gradients, highlights *Do not use with text"),
-        Self(foundation("ink.700"), dark: foundation("ink.300"), token: "semantic.accent.ink", description: "Used for accents, gradients, highlights *Do not use with text"),
-        Self(foundation("orange.500"), dark: foundation("orange.200"), token: "semantic.accent.orange", description: "Used for accents, gradients, highlights *Do not use with text"),
-        Self(foundation("pink.500"), dark: foundation("pink.200"), token: "semantic.accent.pink", description: "Used for accents, gradients, highlights *Do not use with text"),
-        Self(foundation("purple.500"), dark: foundation("purple.700"), token: "semantic.accent.purple", description: "Used for accents, gradients, highlights *Do not use with text"),
-        Self(foundation("teal.500"), dark: foundation("teal.200"), token: "semantic.accent.teal", description: "Used for accents, gradients, highlights *Do not use with text"),
-        Self(foundation("red.800"), dark: foundation("red.300"), token: "semantic.critical.default", description: "Applied sparingly to show negative feedback/status or dangerous actions."),
-        Self(foundation("red.900"), dark: foundation("red.400"), token: "semantic.critical.hover", description: "Applied sparingly to show negative feedback/status or dangerous actions."),
-        Self(foundation("red.950"), dark: foundation("red.500"), token: "semantic.critical.pressed", description: "Applied sparingly to show negative feedback/status or dangerous actions."),
-        Self(foundation("red.100"), dark: foundation("red.900"), token: "semantic.critical.soft", description: "Applied sparingly to show negative feedback/status or dangerous actions."),
-        Self(foundation("blue.700"), dark: FoundationColor(hex: 0x75B4E6, token: "unlisted.primary.default.dark"), token: "semantic.primary.default", description: "Applied frequently to surfaces highlight actions & information."),
-        Self(foundation("blue.800"), dark: FoundationColor(hex: 0x5FA0D6, token: "unlisted.primary.hover.dark"), token: "semantic.primary.hover", description: "Applied frequently to surfaces highlight actions & information."),
-        Self(foundation("blue.900"), dark: FoundationColor(hex: 0x4C8CC2, token: "unlisted.primary.pressed.dark"), token: "semantic.primary.pressed", description: "Applied frequently to surfaces highlight actions & information."),
-        Self(foundation("blue.050"), dark: foundation("blue.950"), token: "semantic.primary.soft", description: "Applied to surfaces"),
-        Self(foundation("green.700"), dark: foundation("green.100"), token: "semantic.success.default", description: "Applied sparingly to show positive feedback/status."),
-        Self(foundation("green.800"), dark: foundation("green.200"), token: "semantic.success.hover", description: "Applied sparingly to show positive feedback/status."),
-        Self(foundation("green.900"), dark: FoundationColor(hex: 0x81D4B5, token: "unlisted.success.pressed.dark"), token: "semantic.success.pressed", description: "Applied sparingly to show positive feedback/status."),
-        Self(foundation("green.050"), dark: foundation("green.950"), token: "semantic.success.soft", description: "Applied to surfaces"),
-        Self(foundation("neutral.025"), dark: foundation("neutral.950"), token: "semantic.surface.base", description: "Main application and content background"),
-        Self(foundation("neutral.200"), dark: foundation("neutral.650"), token: "semantic.surface.border", description: "Strong separation, selected regions, deeper inset areas"),
-        Self(
-            foundation("neutral.400"), dark: foundation("neutral.500"), token: "semantic.surface.border-intense",
-            description: "Strong separation, focus-adjacent outlines, emphasized controls or Low-emphasis metadata, hints, and non-critical information."),
-        Self(foundation("neutral.150"), dark: foundation("neutral.750"), token: "semantic.surface.deep", description: "Strong separation, selected regions, deeper inset areas"),
-        Self(foundation("neutral.050"), dark: foundation("neutral.975"), token: "semantic.surface.lower", description: "Darkest recessed layer or Primary text and icons requiring the strongest emphasis."),
-        Self(foundation("neutral.000"), dark: foundation("neutral.850"), token: "semantic.surface.raised", description: "Menus, dialogs, cards, floating elements"),
-        Self(foundation("neutral.100"), dark: foundation("neutral.900"), token: "semantic.surface.subtle", description: "Hover fills, grouped sections, muted containers"),
-        Self(foundation("neutral.950"), dark: foundation("neutral.050"), token: "semantic.text-icon.base", description: "Main application surface or Primary text and icons requiring the strongest emphasis"),
-        Self(foundation("neutral.025"), dark: foundation("neutral.950"), token: "semantic.text-icon.base-inverted", description: "Applied frequently for text and icons."),
-        Self(foundation("blue.750"), dark: foundation("blue.300"), token: "semantic.text-icon.brand", description: "Branded text and icons that reinforce Thunderbird identity."),
-        Self(foundation("red.700"), dark: foundation("red.400"), token: "semantic.text-icon.critical", description: "Errors, destructive actions, and urgent information."),
-        Self(foundation("neutral.400"), dark: foundation("neutral.500"), token: "semantic.text-icon.disabled", description: "Strong separation, focus-adjacent outlines, emphasized controls or Low-emphasis metadata, hints, and non-critical information."),
-        Self(foundation("blue.700"), dark: foundation("blue.400"), token: "semantic.text-icon.highlight", description: "Interactive, selected, linked, or emphasized content."),
-        Self(foundation("neutral.600"), dark: foundation("neutral.400"), token: "semantic.text-icon.muted", description: "Low-emphasis metadata, hints, and non-critical information."),
-        Self(foundation("neutral.700"), dark: foundation("neutral.300"), token: "semantic.text-icon.secondary", description: "Supporting text and icons with reduced prominence."),
-        Self(foundation("green.800"), dark: foundation("green.400"), token: "semantic.text-icon.success", description: "Successful states, confirmations, and positive outcomes."),
-        Self(foundation("yellow.900"), dark: foundation("yellow.200"), token: "semantic.text-icon.warning", description: "Cautionary information that may require attention."),
-        Self(foundation("yellow.400"), dark: foundation("yellow.100"), token: "semantic.warning.default", description: "Applied sparingly to show warning feedback/status."),
-        Self(foundation("yellow.500"), dark: foundation("yellow.200"), token: "semantic.warning.hover", description: "Applied sparingly to show warning feedback/status."),
-        Self(foundation("yellow.600"), dark: foundation("yellow.300"), token: "semantic.warning.pressed", description: "Applied sparingly to show warning feedback/status."),
-        Self(foundation("yellow.050"), dark: foundation("yellow.950"), token: "semantic.warning.soft", description: "Applied sparingly to show warning feedback/status.")
-    ]
-
-    /// Resolves a foundation token such as `blue.700`. The names are fixed, so a miss is a programmer error caught by the unit tests.
-    private static func foundation(_ token: String) -> FoundationColor {
-        guard let color: FoundationColor = FoundationColor.named(token) else {
-            preconditionFailure("Unknown foundation color: \(token)")
-        }
-        return color
-    }
+    /// In token order: accent, critical, primary, success, surface, text-icon, then warning.
+    public static let allCases: [Self] =
+        Accent.allCases.map(accent) + State.allCases.map(critical) + State.allCases.map(primary) + State.allCases.map(success)
+        + Surface.allCases.map(surface) + TextIcon.allCases.map(textIcon) + State.allCases.map(warning)
 }

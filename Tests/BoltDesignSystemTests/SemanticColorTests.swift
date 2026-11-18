@@ -53,19 +53,24 @@ extension SemanticColorTests {
     }
 
     // Values mirror https://bolt.thunderbird.net/8b179dbfd/p/61e4c7-color
-    @Test func values() throws {
-        func hex(_ name: String, _ level: String) throws -> (any: Int, dark: Int?) {
-            let color: SemanticColor = try #require(SemanticColor.allCases(name: name, level: level).first)
-            return (color.color.any.hex, color.color.dark?.hex)
+    @Test func values() {
+        func hex(_ color: SemanticColor) -> (any: Int, dark: Int?) {
+            (color.color.any.hex, color.color.dark?.hex)
         }
-        #expect(try hex("primary", "default") == (0x1373D9, 0x75B4E6))
-        #expect(try hex("primary", "hover") == (0x175FB6, 0x5FA0D6))
-        #expect(try hex("primary", "pressed") == (0x19518F, 0x4C8CC2))
-        #expect(try hex("success", "pressed") == (0x194E2C, 0x81D4B5))
-        #expect(try hex("text-icon", "brand") == (0x0B5CBD, 0x5FA6E8))
-        #expect(try hex("text-icon", "highlight") == (0x1373D9, 0x58C9FF))
-        #expect(try hex("accent", "teal") == (0x25A6A0, 0xA3ECE3))
-        #expect(try hex("surface", "base") == (0xFCFCFD, 0x18181B))
+        #expect(hex(.primary(.default)) == (0x1373D9, 0x75B4E6))
+        #expect(hex(.primary(.hover)) == (0x175FB6, 0x5FA0D6))
+        #expect(hex(.primary(.pressed)) == (0x19518F, 0x4C8CC2))
+        #expect(hex(.success(.pressed)) == (0x194E2C, 0x81D4B5))
+        #expect(hex(.textIcon(.brand)) == (0x0B5CBD, 0x5FA6E8))
+        #expect(hex(.textIcon(.highlight)) == (0x1373D9, 0x58C9FF))
+        #expect(hex(.accent(.teal)) == (0x25A6A0, 0xA3ECE3))
+        #expect(hex(.surface(.base)) == (0xFCFCFD, 0x18181B))
+    }
+
+    @Test func tokens() {
+        #expect(SemanticColor.surface(.borderIntense).id == "semantic.surface.border-intense")
+        #expect(SemanticColor.textIcon(.baseInverted).id == "semantic.text-icon.base-inverted")
+        #expect(SemanticColor.warning(.default).id == "semantic.warning.default")
     }
 
     @Test func everyColorHasADarkVariant() {

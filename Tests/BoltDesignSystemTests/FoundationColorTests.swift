@@ -55,12 +55,13 @@ extension FoundationColorTests {
     }
 
     @Test func userAccentRed() {
-        #expect(FoundationColor.allCases(name: "user-accent", level: "red").first?.hex == 0xE74642)
+        #expect(FoundationColor(.userAccentRed).hex == 0xE74642)
     }
 
-    @Test func named() {
-        #expect(FoundationColor.named("blue.700")?.hex == 0x1373D9)
-        #expect(FoundationColor.named("foundation.blue.700")?.hex == 0x1373D9)
-        #expect(FoundationColor.named("blue.123") == nil)
+    @Test func name() {
+        #expect(FoundationColor(.blue700).hex == 0x1373D9)
+        #expect(FoundationColor(.blue700).token.description == "foundation.blue.700")
+        #expect(FoundationColor(.userAccentRed).token.description == "foundation.user-accent.red")
+        #expect(FoundationColor.allCases.map(\.id) == FoundationColor.Name.allCases.map { "foundation.\($0.rawValue)" })
     }
 }
